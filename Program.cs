@@ -1,3 +1,4 @@
+global using CORE_EF_WEB_API.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
