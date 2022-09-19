@@ -1,12 +1,17 @@
 global using CORE_EF_WEB_API.Models;
+using CORE_EF_WEB_API.Services.CharacterService;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
+builder.Services.AddScoped<ICharacterService, CharacterService>();
 
 var app = builder.Build();
 
