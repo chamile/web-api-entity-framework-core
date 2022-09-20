@@ -1,7 +1,14 @@
 global using CORE_EF_WEB_API.Models;
+using CORE_EF_WEB_API.Data;
 using CORE_EF_WEB_API.Services.CharacterService;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+//Database connection
+builder.Services.AddDbContext<DataContext>(
+    options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+);
 
 // Add services to the container.
 

@@ -17,5 +17,16 @@ namespace CORE_EF_WEB_API.Services.CharacterService
         Task<ServiceResponce<GetCharacterDto>> UpdateCharacter(UpdateCharacterDto updatedCharacter);
 
         Task<ServiceResponce<List<GetCharacterDto>>> DeleteCharacter(int id);
+
+        Task<ServiceResponce<List<GetCharacterDto>>> GetAllCharactersEF();
+
+        Task<ServiceResponce<GetCharacterDto>> GetCharacterByIdEF(int id);
+
+        Task<ServiceResponce<List<GetCharacterDto>>> AddCharacterEF(AddCharacterDto newCharacter);
+
+        Task<ServiceResponce<GetCharacterDto>> UpdateCharacterEF(
+            UpdateCharacterDto updatedCharacter
+        );
+        Task<ServiceResponce<List<GetCharacterDto>>> DeleteCharacterEF(int id);
     }
 }
